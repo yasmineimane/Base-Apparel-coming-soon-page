@@ -5,6 +5,8 @@
     --Desaturated-Red: hsl(0, 36%, 70%);
     --Soft-Red: hsl(0, 93%, 68%);
     --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --Linear1: linear-gradient(135deg, hsl(0, 68%, 88%), hsl(0, 51%, 93%));
+    --LinearTwo: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 
     /* Font */
     --Font-family: 'Josefin Sans', sans-serif;
@@ -23,5 +25,83 @@
 body {
     font-family: var(--Font-family);
     font-size: var(--Font-size);
-    
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+
+    & > div.content {
+        background: url("./images/bg-pattern-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 3rem 12rem;
+
+        & > img {
+            padding-bottom: 7rem;
+        }
+
+        & > span {
+            color: var(--Desaturated-Red);
+            font-size: 3rem;
+            font-weight: var(--Font-weight-light);
+            letter-spacing: 1rem;
+            text-transform: uppercase;
+        }
+
+        & > h1 {
+            font-size: 3rem;
+            color: var(--Dark-Grayish-Red);
+            font-weight: var(--Font-weight-semibold);
+            letter-spacing: 1rem;
+            text-transform: uppercase;
+            padding-bottom: 1rem;
+        }
+
+        & > p {
+            color: var(--Desaturated-Red);
+            line-height: 1.5rem;
+            font-size: 15px;
+            font-weight: var(--Font-weight-regular);
+            padding-bottom: 2rem;
+        }
+
+        & > div.email {
+            & > input {
+                border-radius: 10rem;
+                border: 1.5px solid #e4d7da;
+                padding: 1rem;
+                width: 350px;
+                position: absolute;
+            }
+
+            & > input::placeholder {
+                color: #f8efee;
+                padding: 1rem;
+            }
+
+            & > button {
+                background: var(--LinearTwo);
+                padding: 0.83rem;
+                border-radius: 10rem;
+                border: none;
+                width: 100px;
+                position: relative;
+                left: 70%;
+                cursor: pointer;
+                box-shadow: 0 8px 16px 0 rgba(244, 217, 217, 1), 0 6px 20px 0 rgba(255,249,249,1);
+            }
+
+            & > button:hover {
+                background: var(--Linear1);
+            }
+        }
+    }
+
+    & > div.image {
+        width: 40vw;
+        height: 99.35vh;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
